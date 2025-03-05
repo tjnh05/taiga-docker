@@ -9,10 +9,22 @@ all: build-back build-front
 # 构建 taiga-back 镜像
 build-back:
 	docker build -t $(IMAGE_BACK):$(TAG) -f Dockerfile.taiga-back .
+	docker tag $(IMAGE_BACK):$(TAG) $(IMAGE_BACK):latest
 
 # 构建 taiga-front 镜像
 build-front:
 	docker build -t $(IMAGE_FRONT):$(TAG) -f Dockerfile.taiga-front .
+	docker tag $(IMAGE_FRONT):$(TAG) $(IMAGE_FRONT):latest
+
+# 上传镜像
+push-back:
+	docker push $(IMAGE_BACK):$(TAG)
+	docker push $(IMAGE_BACK):latest
+
+# 上传镜像
+push-front:
+	docker push $(IMAGE_FRONT):$(TAG)
+	docker push $(IMAGE_FRONT):latest
 
 # 清理构建的镜像
 clean:
