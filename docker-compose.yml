@@ -29,6 +29,8 @@ x-environment:
   ENABLE_TELEMETRY: "${ENABLE_TELEMETRY}"
   # ...your customizations go here
   PUBLIC_REGISTER_ENABLED: "True"
+  REQUESTS_CA_BUNDLE: "/etc/ssl/certs/ca-certificates.crt"
+  #CURL_CA_BUNDLE: "/etc/ssl/certs/ca-certificates.crt"
 
 x-volumes:
   &default-back-volumes
