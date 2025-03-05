@@ -1,6 +1,6 @@
 # 定义镜像名称和标签
-IMAGE_BACK = my-custom-taiga-back
-IMAGE_FRONT = my-custom-taiga-front
+IMAGE_BACK = $(IMAGE_REGISTRY)taiga-back
+IMAGE_FRONT = $(IMAGE_REGISTRY)taiga-front
 TAG = 250305
 
 # 默认目标
