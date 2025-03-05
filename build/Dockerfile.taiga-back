@@ -2,13 +2,13 @@
 FROM crpi-vky0opaxai0svu2g.cn-chengdu.personal.cr.aliyuncs.com/taigaio/taiga-back:latest
 
 # 设置工作目录
-WORKDIR /usr/local/share/ca-certificates/
+#WORKDIR /usr/local/share/ca-certificates/
 
 # 将本地ca目录下的所有.crt文件复制到镜像中
-COPY ca/*.crt ./
+COPY ca/*.crt /usr/local/share/ca-certificates/
 
 # 更新证书
 RUN update-ca-certificates
 
 # 设置默认工作目录
-WORKDIR /taiga-back
+#WORKDIR /taiga-back
