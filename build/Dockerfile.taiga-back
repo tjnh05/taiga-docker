@@ -1,9 +1,9 @@
 # 使用当前镜像作为基础镜像
 FROM crpi-vky0opaxai0svu2g.cn-chengdu.personal.cr.aliyuncs.com/taigaio/taiga-back:latest
 
-# 切换到清华源
-RUN sed -i 's|http://archive.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list && \
-    sed -i 's|http://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list
+# 切换到清华源（适用于 Debian）
+RUN sed -i 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list && \
+    sed -i 's|http://security.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list
 
 # 安装 curl
 RUN apt-get update && apt-get install -y curl
