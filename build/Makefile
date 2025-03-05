@@ -1,4 +1,5 @@
 # 定义镜像名称和标签
+IMAGE_REGISTRY = crpi-vky0opaxai0svu2g.cn-chengdu.personal.cr.aliyuncs.com/bodwang/
 IMAGE_BACK = $(IMAGE_REGISTRY)taiga-back
 IMAGE_FRONT = $(IMAGE_REGISTRY)taiga-front
 TAG = 250305
